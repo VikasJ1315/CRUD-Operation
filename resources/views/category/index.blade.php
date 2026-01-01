@@ -55,7 +55,13 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="card">
+                    <div class="card-body">
+                        <a href="{{ route('project.create') }}" class="btn btn-primary">
+                            Insert Project
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>

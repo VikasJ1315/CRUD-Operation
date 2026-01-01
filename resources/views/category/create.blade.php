@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>
-                        Create ?Details
+                        Create Details
                         <a href="{{ route('Details.index') }}" class="btn btn-Danger float-end"> Back </a>
                     </h4>
                 </div>

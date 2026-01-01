@@ -19,6 +19,10 @@ class DetailsController extends Controller
 
     }
 
+    public function redirect(){
+        return view('category.insert');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
