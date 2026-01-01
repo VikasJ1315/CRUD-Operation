@@ -7,12 +7,11 @@
                 <div class="card-header">
                 </div>
                 <div class="card-body">
+
                     @if (session('success'))
-                        {
-                        <p>{{ session('success') }}</p>
-                        }
-                        <p>{{ session('failed') }}</p>
+                        <p class="text-success">{{ session('success') }}</p>
                     @endif
+
                     <div class="m-5">
                         <form action="{{ route('project.store') }}" method="POST">
                             @csrf

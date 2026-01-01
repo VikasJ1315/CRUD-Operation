@@ -54,6 +54,11 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="m-3">
+                        <a href="{{ route('project.create') }}" class="btn btn-primary">
+                            Insert Project
+                        </a>
+                    </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
