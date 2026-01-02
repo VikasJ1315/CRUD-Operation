@@ -36,14 +36,20 @@ class DetailsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|string|max:50',
             'email' => 'required|email',
             'phone' => 'required|max:10',
             'status' => 'nullable'
         ]);
 
-           Details::create($request->all());
+        if($request->hasFile('image')){
+            $imagepath = $request->file('image')->store('details','public');
+            $validated['image']=$imagepath;
+        };
+
+        details::created($validated);
+
         // dd($request->all());
 
         // Details::created([
@@ -53,7 +59,7 @@ class DetailsController extends Controller
         //     'status' =>$request->status
         // ]);
 
-        return redirect('/Details')->with('status','Detail Added Succesfully');
+        return redirect()->back()->with('status','Detail Added Succesfully');
 
     }
 

@@ -12,7 +12,8 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('Details.update', $details->id) }}" method="post">
+                    <form action="{{ route('Details.update', $details->id) }}" enctype="multipart/form-data"
+                        method="post">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">

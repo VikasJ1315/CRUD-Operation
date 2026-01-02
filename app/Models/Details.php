@@ -11,6 +11,7 @@ class Details extends Model
     protected
     $fillable = [
         'name',
+        'image',
         'email',
         'phone',
         'status',

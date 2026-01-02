@@ -1,10 +1,13 @@
 <?php
 
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailsController;
+use App\Http\Controllers\imageController;
 use App\Http\Controllers\ProjectController;
 use App\Models\{Details, Project,userr,task};
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Route;
+
 
 Route::resource('Details', DetailsController::class);
 
@@ -48,5 +51,8 @@ Route::get('/project',function() {
 
 Route::get('/insert', [ProjectController::class, 'create'])->name('project.create');
 Route::post('/insert', [ProjectController::class, 'store'])->name('project.store');
+
+Route::get('upload',[imageController::class,'create'])->name('detail.image');
+Route::post('/upload/file', [imageController::class,'upload'])->name('detail.store');
 
 Route::get('/test', [ProjectController::class, 'testing'])->name('exceptionLog');

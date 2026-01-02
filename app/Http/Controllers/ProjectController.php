@@ -25,6 +25,7 @@ class ProjectController extends Controller
         ]);
 
         $this->projectService->store($request->only('title'));
+        $this->projectService->store(data: $request->('title'));
 
         return redirect()->back()->with('success', 'Project Created');
     }

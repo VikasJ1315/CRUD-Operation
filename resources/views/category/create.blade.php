@@ -23,6 +23,14 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="image"> Upload Image </label>
+                            <input type="file" name="file" class="form-control">
+                            @error('email')
+                                {{ $message }}
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
                             <label for="Email"> Email </label>
                             <input type="mail" name="email" class="form-control">
                             @error('email')

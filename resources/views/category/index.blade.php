@@ -24,6 +24,7 @@
                             <tr>
                                 <th> ID </th>
                                 <th> name </th>
+                                <th> Image </th>
                                 <th> E-mail </th>
                                 <th> Phone </th>
                                 <th> Status </th>
@@ -35,6 +36,8 @@
                                 <tr>
                                     <td>{{ $detail->id }}</td>
                                     <td>{{ $detail->name }}</td>
+                                    <th> <img height="80px" width="100px"
+                                            src="{{ asset('storage/' . $detail->image) }}" alt="Not Visible"></th>
                                     <td>{{ $detail->email }}</td>
                                     <td>{{ $detail->phone }}</td>
                                     <td>{{ $detail->status == 1 ? 'Active' : 'Inactive' }}</td>
@@ -59,6 +62,10 @@
                     <div class="card-body">
                         <a href="{{ route('project.create') }}" class="btn btn-primary">
                             Insert Project
+                        </a>
+
+                        <a href="{{ route('detail.image') }}" class="btn btn-primary">
+                            Image Upload
                         </a>
                     </div>
                 </div>
